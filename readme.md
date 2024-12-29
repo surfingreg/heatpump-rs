@@ -6,7 +6,7 @@ similar to my own in mission is [this](https://github.com/Sammy1Am/mitsubishi-ua
 I'm not ready to commit to the ESPHome project. Primarily because I really, really do not like
 working in yaml, which is excessively required by ESPHome. I do want to connect my stuff to 
 Home Assistant. I'm not sure the best methodology just yet (ie MQTT, websocket, Kafka, ESPHome, plain old REST).
-Regardless it'll be in Rust. 
+Regardless it'll be in Rust.
 
 ## Seminal works to reverse engineer the Mitsubishi heat pump
 - https://github.com/SwiCago/HeatPump (c/c++)
@@ -31,6 +31,7 @@ Regardless it'll be in Rust.
 - https://github.com/obabec/rust-mqtt (crate, tokio, embedded-io)
 - https://blog.drogue.io/firmware-updates-part-1/ (embassy-boot)
 - https://dev.to/theembeddedrustacean/embedded-rust-embassy-uart-serial-communication-4fd3 (esp32s3 example?)
+- https://github.com/olegccc/esp32-axum-ws/blob/main/.cargo/config.toml (axum, the starting point for this project)
 
 ## ESP32
 - https://github.com/esp-rs/esp-idf-template (starter template, Rust over C++)
@@ -47,9 +48,9 @@ Regardless it'll be in Rust.
 
 
 ## TODO
-- [] start wifi as client
-- [] start web server w/flash api
-- [] OTA software update
+- [x] start wifi as client
+- [x] start web server
+- [] OTA software update w/ flash API
 - [] send debug info via mqtt
 - [] receive data over serial and send over mqtt
 - [] convert to library

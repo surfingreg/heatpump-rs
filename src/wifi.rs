@@ -49,7 +49,7 @@ impl<'a> WifiConnection<'a> {
         default_partition: Option<EspDefaultNvsPartition>,
         config: &Config,
     ) -> Result<Self> {
-        info!("Wifi: initializing...");
+        log::info!("Wifi: initializing...");
 
         let wifi_driver = WifiDriver::new(modem, event_loop.clone(), default_partition)?;
         let ipv4_config = ipv4::ClientConfiguration::DHCP(ipv4::DHCPClientSettings::default());
@@ -78,9 +78,9 @@ impl<'a> WifiConnection<'a> {
         // Set the Wi-Fi configuration
         info!("Wifi: setting credentials...");
         let client_config = ClientConfiguration {
-            ssid: heapless::String::from_str(config.wifi_ssid)
+            ssid: heapless::String::from_str(&config.wifi_ssid)
                 .map_err(|_| anyhow!("Wifi: SSID is too long."))?,
-            password: heapless::String::from_str(config.wifi_pass)
+            password: heapless::String::from_str(&config.wifi_pass)
                 .map_err(|_| anyhow!("Wifi: password is too long."))?,
             ..Default::default()
         };

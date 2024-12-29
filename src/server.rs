@@ -24,7 +24,7 @@ struct SharedState {
     pub led: Mutex<Led>,
 }
 
-static WWW_DIR: Dir = include_dir!("client");
+static WWW_DIR: Dir = include_dir!("www");
 
 pub async fn run_server(_: Arc<WifiState>, led: Led) -> anyhow::Result<()> {
     let state = Arc::new(SharedState {

@@ -13,7 +13,6 @@ use esp_idf_svc::sys;
 use esp_idf_svc::log::EspLogger;
 use esp_idf_svc::nvs::EspDefaultNvsPartition;
 use esp_idf_svc::timer::EspTaskTimerService;
-use log::{error, info};
 use std::thread::sleep;
 use esp_idf_svc::hal::reset;
 use crate::config::Config;
@@ -22,7 +21,7 @@ use crate::server::run_server;
 use crate::wifi::WifiConnection;
 
 fn main() {
-    info!("Starting main()");
+    log::info!("Starting main()");
 
     sys::link_patches();
     EspLogger::initialize_default();
@@ -34,10 +33,9 @@ fn main() {
         .expect("Failed to build Tokio runtime");
 
     match rt.block_on(async { async_main().await }) {
-        Ok(()) => info!("async_main() finished, reboot."),
+        Ok(()) => log::info!("async_main() finished, reboot."),
         Err(err) => {
-            error!("{err:?}");
-            // Let them read the error message before rebooting
+            log::error!("{err:?}");
             sleep(std::time::Duration::from_secs(3));
         },
     }
@@ -46,10 +44,10 @@ fn main() {
 }
 
 async fn async_main() -> anyhow::Result<()> {
-    info!("Got to async_main()");
+    log::info!("[async_main]");
 
     let config = Config::load()?;
-    info!("Configuration:\n{config:#?}");
+    log::info!("[async_main] Configuration:\n{config:#?}");
 
     let peripherals = Peripherals::take()?;
     let sys_loop = EspSystemEventLoop::take()?;
