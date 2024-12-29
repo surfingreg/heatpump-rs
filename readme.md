@@ -47,9 +47,9 @@ Regardless it'll be in Rust.
 
 
 ## TODO
-- [] start wifi as client
+- [] start wifi as client (axum, https://github.com/olegccc/esp32-axum-ws)
 - [] start web server w/flash api
-- [] OTA software update
+- [] OTA software update (https://github.com/faern/esp-ota)
 - [] send debug info via mqtt
 - [] receive data over serial and send over mqtt
 - [] convert to library
