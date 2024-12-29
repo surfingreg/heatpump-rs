@@ -8,7 +8,7 @@
 - send debug info via mqtt
 - receive data over serial and send over mqtt
 - convert to library
-- create 'heatpump' crate and lock in name
+- create crate
 - start wifi as access point (then change to client)
 
 ## References
