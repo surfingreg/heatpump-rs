@@ -47,12 +47,11 @@ Regardless it'll be in Rust.
 
 
 ## TODO
-
-- start wifi as client
-- start web server w/flash api
-- OTA software update
-- send debug info via mqtt
-- receive data over serial and send over mqtt
-- convert to library
-- create crate
-- start wifi as access point (then change to client)
+- [] start wifi as client
+- [] start web server w/flash api
+- [] OTA software update
+- [] send debug info via mqtt
+- [] receive data over serial and send over mqtt
+- [] convert to library
+- [] create crate
+- [] start wifi as access point (then change to client)
