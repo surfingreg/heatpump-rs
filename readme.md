@@ -1,24 +1,14 @@
 # Work in Progress!
 
-## TODO
+The goal is to control my Mitsubishi heat pumps in pure Rust. Others have gone before
+in C++ and Python. I fully intend to stand on their shoulders. The project most 
+similar to my own in mission is [this](https://github.com/Sammy1Am/mitsubishi-uart). However,
+I'm not ready to commit to the ESPHome project. Primarily because I really, really do not like
+working in yaml, which is excessively required by ESPHome. I do want to connect my stuff to 
+Home Assistant. I'm not sure the best methodology just yet (ie MQTT, websocket, Kafka, ESPHome, plain old REST).
+Regardless it'll be in Rust. 
 
-- start wifi as client
-- start web server w/flash api
-- OTA software update
-- send debug info via mqtt
-- receive data over serial and send over mqtt
-- convert to library
-- create crate
-- start wifi as access point (then change to client)
-
-## References
-
-## Where I want to go...  
-I'm undecided on a few points: communicate via MQTT? websocket? not sure how ESPHome talks.  
-The main difference is I want to start over entirely in Rust. Oh, and I strenuously dislike yaml.
-- https://github.com/Sammy1Am/mitsubishi-uart
-
-## The seminal works to reverse engineer the Mitsubishi heat pump.
+## Seminal works to reverse engineer the Mitsubishi heat pump
 - https://github.com/SwiCago/HeatPump (c/c++)
 - https://github.com/gysmo38/mitsubishi2MQTT (web/mqtt/c/c++)
 - https://github.com/geoffdavis/esphome-mitsubishiheatpump (yaml/esphome/)
@@ -28,11 +18,7 @@ The main difference is I want to start over entirely in Rust. Oh, and I strenuou
 - https://web.archive.org/web/20171126013431/http://www.esp8266.com/viewtopic.php?f=29&t=13207 (pin diagram for cn105)
 - https://github.com/hadleyrich/MQMitsi (the other side of the original project, python, good protocol info)
 
-## CN105 Hardware:
-- https://github.com/SwiCago/HeatPump/issues/13#issuecomment-457897457
-- https://gotductless.com/products/airzone-aidoo-cn105-splitter-for-mitsubishi (cn105 splitter)
-
-## Rust-related
+## Rust-Related
 - https://github.com/rust-embedded/awesome-embedded-rust
 - Rust on ESP Book: https://docs.esp-rs.org/book/writing-your-own-application/generate-project/index.html
 - OTA: https://lib.rs/crates/esp-ota (rust, similar functionality hidden in esp-idf-svc, so not necessary, but documented)
@@ -54,3 +40,19 @@ The main difference is I want to start over entirely in Rust. Oh, and I strenuou
 - https://www.techrm.com/independent-control-of-two-leds-with-arduino-nano-esp32-a-practical-introduction/ (platformio/c++)
 - setting up embassy on esp32 https://pg3.dev/post/13
 - various sample projects on esp32 https://github.com/PGIII/rust-esp32
+
+## CN105 Hardware
+- https://github.com/SwiCago/HeatPump/issues/13#issuecomment-457897457
+- https://gotductless.com/products/airzone-aidoo-cn105-splitter-for-mitsubishi (cn105 splitter)
+
+
+## TODO
+
+- start wifi as client
+- start web server w/flash api
+- OTA software update
+- send debug info via mqtt
+- receive data over serial and send over mqtt
+- convert to library
+- create crate
+- start wifi as access point (then change to client)
